@@ -23,4 +23,4 @@ class Usuario(db.Model):
     ativo = db.Column(db.Boolean, default=True)
     verificado = db.Column(db.Boolean, default=False)
 
-    #veiculos = db.relationship("Veiculo", backref="usuario", lazy=True, cascade="all, delete-orphan")
+    veiculos = db.relationship("Veiculo", backref="usuario", lazy=True, cascade="all, delete-orphan")

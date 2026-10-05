@@ -1,0 +1,1 @@
+from .crlv_stub import extrair_dados_crlv
