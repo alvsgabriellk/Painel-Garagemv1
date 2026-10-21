@@ -8,7 +8,7 @@ def enviar_email_confirmacao(usuario):
 
     app_url = current_app.config.get("APP_URL")
 
-    link = f"{app_url}/auth/confirmar-email/{token}"
+    link = f"{app_url}/frontend/templates/confirmar-email/index.html?token={token}"
 
     corpo = f"""Olá, {usuario.nome}!
 

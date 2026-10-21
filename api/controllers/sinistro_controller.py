@@ -1,6 +1,6 @@
 from services import (
     sinistro_criar,
-    sinistro_listar,
+    sinistros_listar,
     sinistro_deletar,
     sinistro_upload_foto,
     sinistro_upload_bo,
