@@ -22,7 +22,7 @@ class Config:
 
     RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 
-    APP_URL = os.getenv("APP_URL", "http://localhost:5000")
+    APP_URL = os.getenv("APP_URL", "http://127.0.0.1:5500")
     UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), "uploads")
 
 

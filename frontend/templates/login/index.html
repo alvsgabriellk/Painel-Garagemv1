@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar | garagem.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-card" aria-labelledby="login-title">
+      <div class="brand">garagem.</div>
+      <h1 id="login-title">Entrar</h1>
+      <p>Acesse o painel do seu carro.</p>
+      <form class="form-stack" action="/auth/login" method="post" >
+        <label class="field"><span s>E-mail</span><input name="email" type="email" autocomplete="email" required></label>
+        <label class="field"><span>Senha</span><input name="senha" type="password" autocomplete="current-password" required></label>
+        <div class="notice" data-message hidden role="alert"></div>
+        <button class="btn btn-primary" type="submit">Entrar</button>
+      </form>
+      <div class="auth-links">
+        <a class="text-link" href="../recuperar-senha/">Esqueci minha senha</a>
+        <a class="text-link" href="../cadastro/">Criar conta</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../js/sessao.js"></script>
+  <script src="../../js/autenticacoes/auth-comum.js"></script>
+  <script src="../../js/autenticacoes/login.js"></script>
+</body>
+</html>

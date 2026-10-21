@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recuperar senha | garagem.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-card" aria-labelledby="recovery-title">
+      <div class="brand">garagem.</div>
+      <h1 id="recovery-title">Recuperar senha</h1>
+      <p>Informe seu e-mail para receber um código.</p>
+      <form class="form-stack" action="/auth/esqueci-senha" method="post">
+        <label class="field"><span>E-mail</span><input name="email" type="email" autocomplete="email" required></label>
+        <div class="notice" data-message hidden role="alert"></div>
+        <button class="btn btn-primary" type="submit">Enviar código</button>
+      </form>
+      <form class="form-stack reset-form" action="/auth/resetar-senha" method="post">
+        <h2>Já recebeu o código?</h2>
+        <label class="field"><span>Código recebido</span><input name="token" autocomplete="one-time-code" required></label>
+        <label class="field"><span>Nova senha</span><input name="nova_senha" type="password" minlength="6" autocomplete="new-password" required></label>
+        <button class="btn btn-secondary" type="submit">Alterar senha</button>
+      </form>
+      <div class="auth-links"><a class="text-link" href="../login/">Voltar ao login</a></div>
+    </section>
+  </main>
+
+  <script src="../../js/autenticacoes/auth-comum.js"></script>
+  <script src="../../js/autenticacoes/recuperar-senha.js"></script>
+</body>
+</html>

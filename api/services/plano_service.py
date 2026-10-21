@@ -1,4 +1,4 @@
-from pagamentos import processar_pagamento
+# from pagamentos import processar_pagamento
 from services.acesso_service import dias_restantes_trial, trial_expirado
 
 LIMITES_POR_PLANO = {
@@ -63,7 +63,7 @@ def fazer_upgrade(usuario, novo_plano):
     if novo_plano not in LIMITES_POR_PLANO or novo_plano == "free":
         return {"error": "Plano inválido"}, 400
 
-    sucesso, mensagem = processar_pagamento(usuario, novo_plano)
+    sucesso, mensagem = "ola" #processar_pagamento(usuario, novo_plano)
 
     if not sucesso:
         return {"error": mensagem}, 402
