@@ -39,6 +39,10 @@ class DesenvolvimentoConfig(Config):
 
 class ProducaoConfig(Config):
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
+    _db_url = (os.getenv("DATABASE_URL") or "").replace("postgres://", "postgresql://", 1)
+    SQLALCHEMY_DATABASE_URI = _db_url or (
+        "sqlite:///" + os.path.join(os.path.dirname(__file__), "dev.db")
+    )
+    #SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
     CORS_ORIGINS = [os.getenv("APP_URL")]
     MAIL_SUPPRESS_SEND = False
