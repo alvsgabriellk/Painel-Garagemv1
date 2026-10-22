@@ -1,3 +1,5 @@
+gunicorn
+psycopg2-binary
 blinker==1.9.0
 click==8.5.0
 Flask==3.1.3

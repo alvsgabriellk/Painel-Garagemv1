@@ -22,14 +22,17 @@ class Config:
 
     RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 
-    APP_URL = os.getenv("APP_URL", "http://127.0.0.1:5500")
+    #APP_URL = os.getenv("APP_URL", "http://127.0.0.1:5500")
+    APP_URL = os.getenv("APP_URL", "https://painel-garagem.netlify.app")
+
     UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), "uploads")
 
 
 class DesenvolvimentoConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(os.path.dirname(__file__), "dev.db")
-    CORS_ORIGINS = ["http://127.0.0.1:5500"]
+    #CORS_ORIGINS = ["http://127.0.0.1:5500"]
+    CORS_ORIGINS = ["https://painel-garagem.netlify.app"]
 
     MAIL_SUPPRESS_SEND = False
 
