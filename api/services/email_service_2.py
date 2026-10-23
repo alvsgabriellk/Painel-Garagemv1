@@ -21,6 +21,9 @@ def enviar_com_flask_mail(destinatario, assunto, corpo):
 def enviar_com_resend(destinatario, assunto, corpo):
     pass
 
+def enviar_com_log(destinatario, assunto, corpo):
+    current_app.logger.info(f"[EMAIL] Para: {destinatario} | {assunto}\n{corpo}")
+
 def enviar_email(destinatario, assunto, corpo):
     provedor = os.getenv("EMAIL_PROVEDOR", "flask_mail")
 
@@ -28,6 +31,13 @@ def enviar_email(destinatario, assunto, corpo):
         enviar_com_resend(
             destinatario=destinatario,
             assunto=assunto,
+            corpo=corpo
+        )
+
+    elif provedor == "log":
+        enviar_com_log(
+            destinatario=destinatario,
+            assunto=assunto, 
             corpo=corpo
         )
 
