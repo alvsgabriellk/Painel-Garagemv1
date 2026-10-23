@@ -24,6 +24,18 @@ def criando_app():
 
     app.register_blueprint(auth_bp)
 
+    @app.route("/saude")
+    def saude():
+        return jsonify({"status": "ok"}), 200
+
+    @app.errorhandler(404)
+    def nao_encontrado(e):
+        return jsonify({"error": "Rota não encontrada"}), 404
+
+    @app.errorhandler(500)
+    def erro_interno(e):
+        return jsonify({"error": "Erro interno no servidor"}), 500
+
     with app.app_context():
         db.create_all()
 
