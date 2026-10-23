@@ -13,7 +13,7 @@ def enviar_com_flask_mail(destinatario, assunto, corpo):
 
     try:
         mail.send(msg)
-        current_app.logger.info(f"Flask-Mail: e-mail enviado para {destinatario}")
+        current_app.logger.warning(f"Flask-Mail: e-mail enviado para {destinatario}")
     except Exception as e:
         current_app.logger.error(f"Flask-Mail falhou: {e}") 
 
