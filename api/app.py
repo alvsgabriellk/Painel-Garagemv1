@@ -6,7 +6,7 @@ from flask_jwt_extended import JWTManager
 from database import db
 from utils import mail
 from config import DesenvolvimentoConfig, ProducaoConfig
-from routes import auth_bp
+from routes import auth_bp, veiculo_bp, plano_bp, manutencao_bp, perfil_bp
 
 def criando_app():
     app = Flask(__name__)
@@ -23,6 +23,10 @@ def criando_app():
                 exist_ok=True)
 
     app.register_blueprint(auth_bp)
+    app.register_blueprint(veiculo_bp)
+    app.register_blueprint(manutencao_bp)
+    app.register_blueprint(plano_bp)
+    app.register_blueprint(perfil_bp)
 
     @app.route("/saude")
     def saude():

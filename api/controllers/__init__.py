@@ -6,6 +6,11 @@ from .auth_controller import (
     resetar_senha_dados
 )
 
+from .perfil_controller import (
+    perfil_dados,
+    perfil_atualizar_dados
+)
+
 from .veiculo_controller import (
     veiculo_dados,
     veiculos_lista,

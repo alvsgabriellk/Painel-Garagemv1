@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Visão geral | garagem.</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/visao-geral.css">
+<link rel="stylesheet" href="../css/painel.css">
+</head>
+<body>
+    
+    <div class="app">
+
+        <aside class="sidebar">
+
+            <div class="brand">garagem.</div>
+
+            <div class="vehicle-card">
+                <div class="vehicle-name">Carregando…</div>
+                <div class="vehicle-plate"></div>
+            </div>
+
+            <nav class="nav">
+
+                <span class="nav-label">Veículo</span>
+
+                <a class="nav-item active" href="visao-geral.html">Visão geral</a>
+                <a class="nav-item" href="meu-carro.html">Meu carro</a>
+                <a class="nav-item" href="manutencoes.html">Manutenções</a>
+                <a class="nav-item" href="oleo-correia.html">Óleo &amp; correia</a>
+                <a class="nav-item" href="pneus.html">Pneus</a>
+                <a class="nav-item" href="impostos.html">Impostos</a>
+                <a class="nav-item" href="sinistros.html">Sinistros</a>
+                <a class="nav-item" href="relatorios.html">Relatórios</a>
+
+                <span class="nav-divider"></span>
+
+                <span class="nav-label">Conta</span>
+
+                <a class="nav-item" href="perfil-motorista.html">Perfil do motorista</a>
+                <a class="nav-item" href="planos.html">Planos</a>
+
+            </nav>
+
+        </aside>
+
+        <main class="main">
+
+            <header class="topbar">
+
+                <div>
+                    <div class="greeting">Olá,</div>
+                    <div class="greeting-name"></div>
+                </div>
+
+                <span class="notification">Notificações</span>
+
+            </header>
+
+            <div class="content">
+
+                <section class="page">
+
+                    <header class="page-head">
+                        <h1>Visão geral</h1>
+                        <p>Resumo do seu veículo e pendências que precisam de atenção.</p>
+                    </header>
+
+                    <div class="grid-3">
+                    <article class="card">
+                        <div class="card-head"><h2>Km atual</h2></div>
+                        <strong class="stat" data-stat="km_atual">—</strong>
+                    </article>
+                    <article class="card">
+                        <div class="card-head"><h2>Gasto nos últimos 6 meses</h2></div>
+                        <strong class="stat" data-stat="gasto_6m">—</strong>
+                    </article>
+                    <article class="card">
+                        <div class="card-head"><h2>Custo por km</h2></div>
+                        <strong class="stat" data-stat="custo_km">—</strong>
+                    </article>
+                </div>
+
+                <div class="grid-2">
+                    <article class="card" data-card="oleo">
+                        <div class="card-head">
+                            <h2 data-campo="titulo">Troca de óleo</h2>
+                            <span class="badge badge-neutral" data-campo="badge">Carregando…</span>
+                        </div>
+                        <div class="progress-track"><div class="progress-fill" data-campo="barra" style="width:0%"></div></div>
+                    </article>
+                    <article class="card" data-card="licenciamento">
+                        <div class="card-head">
+                            <h2 data-campo="titulo">Licenciamento</h2>
+                            <span class="badge badge-neutral" data-campo="badge">Carregando…</span>
+                        </div>
+                        <p class="muted" data-campo="texto"></p>
+                    </article>
+                    <article class="card" data-card="correia">
+                        <div class="card-head">
+                            <h2 data-campo="titulo">Correia dentada</h2>
+                            <span class="badge badge-neutral" data-campo="badge">Carregando…</span>
+                        </div>
+                        <div class="progress-track"><div class="progress-fill" data-campo="barra" style="width:0%"></div></div>
+                    </article>
+                    <article class="card" data-card="pneus">
+                        <div class="card-head">
+                            <h2 data-campo="titulo">Pneus e alinhamento</h2>
+                            <span class="badge badge-neutral" data-campo="badge">Carregando…</span>
+                        </div>
+                        <p class="muted" data-campo="texto"></p>
+                    </article>
+                </div>
+            </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../js/sessao.js"></script>
+<script src="../js/painel-comum.js"></script>
+    <script src="../js/visao-geral.js"></script>
+
+</body>
+</html>

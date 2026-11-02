@@ -79,7 +79,7 @@ def manutencoes_listar(veiculo_id=None):
     if veiculo_id:
         query = query.where(Manutencao.veiculo_id == veiculo_id)
 
-    manutencoes = db.session.execute(query.order_by(Manutencao.data_manutencao.desc())).scalars().all()
+    manutencoes = db.session.execute(query.order_by(Manutencao.data_manutencao.desc(), Manutencao.id.desc())).scalars().all()
 
     return {"manutencoes": [_manutencao_para_json(m) for m in manutencoes]}, 200
 

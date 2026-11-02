@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Perfil do motorista | garagem.</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/perfil-motorista.css">
+<link rel="stylesheet" href="../css/painel.css">
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">garagem.</div>
+            <div class="vehicle-card">
+                <div class="vehicle-name">Carregando…</div>
+                <div class="vehicle-plate"></div>
+            </div>
+            <nav class="nav">
+                <span class="nav-label">Veículo</span>
+                <a class="nav-item" href="visao-geral.html">Visão geral</a>
+                <a class="nav-item" href="meu-carro.html">Meu carro</a>
+                <a class="nav-item" href="manutencoes.html">Manutenções</a>
+                <a class="nav-item" href="oleo-correia.html">Óleo &amp; correia</a>
+                <a class="nav-item" href="pneus.html">Pneus</a>
+                <a class="nav-item" href="impostos.html">Impostos</a>
+                <a class="nav-item" href="sinistros.html">Sinistros</a>
+                <a class="nav-item" href="relatorios.html">Relatórios</a>
+                <span class="nav-divider"></span>
+                <span class="nav-label">Conta</span>
+                <a class="nav-item active" href="perfil-motorista.html">Perfil do motorista</a>
+                <a class="nav-item" href="planos.html">Planos</a>
+            </nav>
+        </aside>
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <div class="greeting">Olá,</div>
+                    <div class="greeting-name"></div>
+                </div><span class="notification">Notificações</span>
+            </header>
+            <div class="content">
+                <section class="page">
+                <header class="page-head">
+                    <h1>Perfil do motorista</h1>
+                    <p>Seus dados pessoais. O e-mail é o seu login e, por segurança, não pode ser alterado por enquanto.</p>
+                </header>
+                <article class="card">
+                    <div class="card-head"><h2>Seu plano</h2></div>
+                    <div class="kv-list" style="margin-top:0">
+                        <div><span>Plano</span><strong data-campo="plano">—</strong></div>
+                        <div><span>Veículos permitidos</span><strong data-campo="limite_veiculos">—</strong></div>
+                        <div><span>Período gratuito</span><strong data-campo="trial">—</strong></div>
+                    </div>
+                </article>
+                <article class="card">
+                    <form data-form="perfil" class="form-grid" novalidate>
+                        <label class="field"><span class="field-label">Nome completo</span><input name="nome" maxlength="35" autocomplete="name"></label>
+                        <label class="field"><span class="field-label">E-mail</span><input name="email" type="email" readonly></label>
+                        <label class="field"><span class="field-label">CPF</span><input name="cpf" inputmode="numeric" placeholder="000.000.000-00"></label>
+                        <label class="field"><span class="field-label">CNH <span class="small">(opcional)</span></span><input name="cnh" placeholder="Número da CNH"></label>
+                        <label class="field"><span class="field-label">Telefone</span><input name="telefone" type="tel" placeholder="(83) 99999-0000"></label>
+                        <label class="field"><span class="field-label">Endereço</span><input name="endereco"></label>
+                        <div data-message class="notice" role="alert" hidden></div>
+                        <div class="form-actions">
+                                                        <button type="submit" class="button">Salvar alterações</button>
+                        </div>
+                    </form>
+                </article>
+            </section>
+            </div>
+        </main>
+    </div>
+
+
+<script src="../js/sessao.js"></script>
+<script src="../js/painel-comum.js"></script>
+<script src="../js/perfil-motorista.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Manutenções | garagem.</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/manutencoes.css">
+<link rel="stylesheet" href="../css/painel.css">
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">garagem.</div>
+            <div class="vehicle-card">
+                <div class="vehicle-name">Carregando…</div>
+                <div class="vehicle-plate"></div>
+            </div>
+            <nav class="nav"><span class="nav-label">Veículo</span><a class="nav-item" href="visao-geral.html">Visão
+                    geral</a><a class="nav-item" href="perfil-motorista.html">Perfil do motorista</a><a class="nav-item"
+                    href="meu-carro.html">Meu carro</a><a class="nav-item active"
+                    href="manutencoes.html">Manutenções</a><a class="nav-item" href="oleo-correia.html">Óleo &amp;
+                    correia</a><a class="nav-item" href="pneus.html">Pneus</a><a class="nav-item"
+                    href="impostos.html">Impostos</a><a class="nav-item" href="sinistros.html">Sinistros</a><a
+                    class="nav-item" href="relatorios.html">Relatórios</a><span class="nav-divider"></span><span
+                    class="nav-label">Conta</span><a class="nav-item" href="planos.html">Planos</a></nav>
+        </aside>
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <div class="greeting">Olá,</div>
+                    <div class="greeting-name"></div>
+                </div><span class="notification">Notificações</span>
+            </header>
+            <div class="content">
+                <section class="page">
+                <header class="page-head-row">
+                    <div>
+                        <h1>Manutenções</h1>
+                        <p>Histórico de tudo que já foi feito no carro.</p>
+                    </div>
+                    <button type="button" class="button" data-acao="nova-manutencao">Nova manutenção</button>
+                </header>
+
+                <div class="grid-3">
+                    <article class="card"><div class="card-head"><h2>Total gasto</h2></div><strong class="stat" data-campo="total_gasto">—</strong></article>
+                    <article class="card"><div class="card-head"><h2>Manutenções</h2></div><strong class="stat" data-campo="quantidade">—</strong></article>
+                    <article class="card"><div class="card-head"><h2>Última manutenção</h2></div><strong class="stat" data-campo="ultima_manutencao">—</strong></article>
+                </div>
+
+                <article class="card" id="formulario-manutencao">
+                    <form data-form="manutencao" class="form-grid" novalidate>
+                        <div class="card-head span-2" style="margin-bottom:0">
+                            <h2 data-modo="novo">Registrar manutenção</h2>
+                            <h2 data-modo="edicao" hidden>Editar manutenção</h2>
+                        </div>
+                        <label class="field"><span class="field-label">Tipo</span><input name="tipo_manutencao" placeholder="Ex.: Troca de óleo"></label>
+                        <label class="field"><span class="field-label">Oficina</span><input name="oficina"></label>
+                        <label class="field"><span class="field-label">Valor (R$)</span><input name="valor" inputmode="decimal" placeholder="250,00"></label>
+                        <label class="field"><span class="field-label">Km da manutenção</span><input name="km_manutencao" inputmode="decimal"></label>
+                        <label class="field"><span class="field-label">Garantia (dias)</span><input name="garantia_dias" inputmode="numeric"></label>
+                        <label class="field"><span class="field-label">Data</span><input name="data_manutencao" type="date"></label>
+                        <div class="field span-2" data-modo="novo">
+                            <span class="field-label">Pneus trocados <span class="small">(só para troca de pneus)</span></span>
+                            <div class="check-grid">
+                                <label class="check-line"><input type="checkbox" name="pneus" value="Dianteiro esquerdo"> Dianteiro esquerdo</label>
+                                <label class="check-line"><input type="checkbox" name="pneus" value="Dianteiro direito"> Dianteiro direito</label>
+                                <label class="check-line"><input type="checkbox" name="pneus" value="Traseiro esquerdo"> Traseiro esquerdo</label>
+                                <label class="check-line"><input type="checkbox" name="pneus" value="Traseiro direito"> Traseiro direito</label>
+                                <label class="check-line"><input type="checkbox" name="pneus" value="Estepe"> Estepe</label>
+                            </div>
+                        </div>
+                        <div data-message class="notice" role="alert" hidden></div>
+                        <div class="form-actions">
+                            <button type="button" class="button secondary" data-acao="cancelar-edicao" hidden>Cancelar</button>
+                            <button type="submit" class="button">Salvar</button>
+                        </div>
+                    </form>
+                </article>
+
+                <article class="card">
+                    <div class="table-wrap">
+                        <table class="table">
+                            <thead>
+                                <tr><th>Data</th><th>Tipo</th><th>Oficina</th><th>Km</th><th>Valor</th><th>Garantia</th><th>Ações</th></tr>
+                            </thead>
+                            <tbody data-lista="manutencoes"></tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+            </div>
+        </main>
+    </div>
+    
+<script src="../js/sessao.js"></script>
+<script src="../js/painel-comum.js"></script>
+<script src="../js/manutencoes.js"></script>
+
+</body>
+</html>

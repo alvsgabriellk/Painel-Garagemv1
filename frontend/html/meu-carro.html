@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Meu carro | garagem.</title>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/meu-carro.css">
+<link rel="stylesheet" href="../css/painel.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar">
+
+            <div class="brand">garagem.</div>
+
+            <div class="vehicle-card">
+                <div class="vehicle-name">Carregando…</div>
+                <div class="vehicle-plate"></div>
+            </div>
+
+            <nav class="nav">
+
+                <span class="nav-label">Veículo</span>
+
+                <a class="nav-item" href="visao-geral.html">Visão geral</a>
+                <a class="nav-item" href="perfil-motorista.html">Perfil do motorista</a>
+                <a class="nav-item active" href="meu-carro.html">Meu carro</a>
+                <a class="nav-item" href="manutencoes.html">Manutenções</a>
+                <a class="nav-item" href="oleo-correia.html">Óleo &amp; correia</a>
+                <a class="nav-item" href="pneus.html">Pneus</a>
+                <a class="nav-item" href="impostos.html">Impostos</a>
+                <a class="nav-item" href="sinistros.html">Sinistros</a>
+                <a class="nav-item" href="relatorios.html">Relatórios</a>
+
+                <span class="nav-divider"></span>
+
+                <span class="nav-label">Conta</span>
+
+                <a class="nav-item" href="planos.html">Planos</a>
+
+            </nav>
+
+        </aside>
+
+        <main class="main">
+
+            <header class="topbar">
+
+                <div>
+                    <div class="greeting">Olá,</div>
+                    <div class="greeting-name"></div>
+                </div>
+
+                <span class="notification">Notificações</span>
+
+            </header>
+
+            <div class="content">
+
+                <section class="page">
+                <header class="page-head">
+                    <h1>Meu carro</h1>
+                    <p>Dados do documento do veículo e gestão dos carros cadastrados.</p>
+                </header>
+
+                <div class="grid-2">
+                    <article class="card">
+                        <div class="card-head"><h2>Documento do veículo</h2></div>
+                        <div class="doc-grid">
+                            <div><span class="muted">Placa</span><p data-campo="placa">—</p></div>
+                            <div><span class="muted">RENAVAM</span><p data-campo="renavam">—</p></div>
+                            <div><span class="muted">Km atual</span><p data-campo="km_atual">—</p></div>
+                            <div><span class="muted">Marca / Modelo</span><p data-campo="marca_modelo">—</p></div>
+                            <div><span class="muted">Ano</span><p data-campo="ano_modelo">—</p></div>
+                            <div><span class="muted">Cor</span><p data-campo="cor">—</p></div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-head"><h2>CRLV</h2></div>
+                        <p class="muted">Envie o CRLV para tentar preencher o cadastro automaticamente. Se a leitura não estiver disponível, preencha os dados à mão.</p>
+                        <div class="upload-box">
+                            <label>Enviar CRLV (PDF ou imagem)
+                                <input type="file" data-crlv accept=".pdf,.jpg,.jpeg,.png">
+                            </label>
+                        </div>
+                    </article>
+                </div>
+
+                <article class="card">
+                    <form data-form="veiculo" class="form-grid" novalidate>
+                        <div class="card-head span-2" style="margin-bottom:0">
+                            <h2 data-modo="edicao">Editar dados do veículo</h2>
+                            <h2 data-modo="novo" hidden>Cadastrar veículo</h2>
+                        </div>
+                        <label class="field"><span class="field-label">Placa</span><input name="placa" maxlength="8" autocomplete="off" placeholder="ABC1D23"></label>
+                        <label class="field"><span class="field-label">RENAVAM</span><input name="renavam" inputmode="numeric" maxlength="11" autocomplete="off"></label>
+                        <label class="field"><span class="field-label">Marca</span><input name="marca"></label>
+                        <label class="field"><span class="field-label">Modelo</span><input name="modelo"></label>
+                        <label class="field"><span class="field-label">Ano do modelo</span><input name="ano_modelo" inputmode="numeric" maxlength="4"></label>
+                        <label class="field"><span class="field-label">Cor</span><input name="cor"></label>
+                        <label class="field"><span class="field-label">Km atual</span><input name="km_atual" inputmode="decimal"></label>
+                        <label class="field"><span class="field-label">Km na compra</span><input name="km_compra" inputmode="decimal"></label>
+                        <label class="field"><span class="field-label">Tipo de óleo <span class="small">(opcional)</span></span><input name="oleo_tipo" placeholder="Ex.: 5W30 sintético"></label>
+                        <label class="field"><span class="field-label">Intervalo de troca de óleo (km)</span><input name="oleo_intervalo" inputmode="numeric"></label>
+                        <label class="field"><span class="field-label">Intervalo da correia (km)</span><input name="correia_intervalo" inputmode="numeric"></label>
+                        <div data-message class="notice" role="alert" hidden></div>
+                        <div class="form-actions">
+                            <button type="button" class="button secondary" data-acao="cancelar-novo" hidden>Cancelar</button>
+                            <button type="submit" class="button">Salvar</button>
+                        </div>
+                    </form>
+                </article>
+
+                <article class="card">
+                    <div class="card-head">
+                        <h2>Meus veículos</h2>
+                        <button type="button" class="button" data-acao="novo-veiculo">Adicionar veículo</button>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="table">
+                            <thead><tr><th>Veículo</th><th>Placa</th><th>Km atual</th><th></th></tr></thead>
+                            <tbody data-lista="veiculos"></tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../js/sessao.js"></script>
+<script src="../js/painel-comum.js"></script>
+    <script src="../js/meu-carro.js"></script>
+
+</body>
+</html>

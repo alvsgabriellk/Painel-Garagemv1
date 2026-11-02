@@ -6,6 +6,12 @@ from .auth_service import (
     redefinir_senha
 )
 
+from .perfil_service import (
+    perfil_buscar,
+    perfil_atualizar,
+    _perfil_para_json
+)
+
 from .email_service import (
     enviar_email_confirmacao,
     enviar_email_recuperacao

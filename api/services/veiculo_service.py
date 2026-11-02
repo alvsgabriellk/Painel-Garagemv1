@@ -95,8 +95,10 @@ def veiculo_atualizar_dados(veiculo_id, dados):
     ]
 
     if "km_atual" in dados:
-        if dados["km_atual"] <= veiculo.km_atual:
-            return {"error": "km atual não pode ser menor que a anterior"}, 400
+        novo_km = float(dados["km_atual"])
+        if novo_km <= veiculo.km_atual:
+            return {"error": "km atual não pode ser menor que o registrado"}, 400
+        dados["km_atual"] = novo_km
     
     for campo in campos_permitidos:
         if campo in dados:

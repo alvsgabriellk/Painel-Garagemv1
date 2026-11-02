@@ -44,8 +44,8 @@ def relatorio_gerar(veiculo_id, data_de=None, data_ate=None):
     seis_meses_atras = hoje - timedelta(days=183)
     manutencoes_6m = [m for m in manutencoes if m.data_manutencao >= seis_meses_atras]
     custo_6m = sum(float(m.valor or 0) for m in manutencoes_6m)
-    km_rodado_6m = max(1, (veiculo.km_atual or 0) - (veiculo.km_ha_6_meses or 0))
-    custo_por_km = round(custo_6m / km_rodado_6m, 2)
+    km_rodado_6m = (veiculo.km_atual or 0) - (veiculo.km_ha_6_meses or 0)
+    custo_por_km = round(custo_6m / km_rodado_6m, 2) if km_rodado_6m > 0 else None
 
     return {
         "periodo": {"de": de.isoformat(), "ate": ate.isoformat()},

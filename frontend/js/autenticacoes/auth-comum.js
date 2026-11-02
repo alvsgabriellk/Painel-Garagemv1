@@ -3,7 +3,8 @@
 
 //  Configuração 
 // Assume que o blueprint está registrado com url_prefix="/auth".
-const API_URL = "https://painel-garagemvm.onrender.com/auth";
+//const API_URL = "https://painel-garagemvm.onrender.com/auth";
+const API_URL = "http://127.0.0.1:5000/auth";
 const PAGINA_APOS_LOGIN = "../../html/visao-geral.html"; // (o login usa Sessao.irParaPainel(), que volta pra última página)
 const PAGINA_LOGIN = "../login/";
 
